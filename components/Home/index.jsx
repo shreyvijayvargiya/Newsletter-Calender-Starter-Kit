@@ -60,15 +60,13 @@ const Home = () => {
 								<div className="border-l-2 border-dotted border-gray-500 dark:border-gray-700 ml-4 p-4" />
 								<BlogCard>
 									<div className="flex justify-start items-center md:gap-20 md:flex-row sm:flex-col xs:flex-col xxs:flex-col sm:items-start xxs:items-start xs:items-start">
-										<div className="p-2">
-											<div className="flex justify-start gap-1 items-center text-xs text-gray-800 m-1">
-												<DateIcon />
-												<p className="text-gray-900 dark:text-gray-400 w-full text-md">
-													{date[2] + " " + date[1]}
-												</p>
-											</div>
+										<div className="flex justify-start gap-1 items-center text-xs text-gray-800 m-1 ">
+											<DateIcon />
+											<p className="text-gray-900 dark:text-gray-400 w-full text-md">
+												{date[2] + " " + date[1]}
+											</p>
 										</div>
-										<p className="text-lg text-left my-2">{item.subject}</p>
+										<p className="text-lg text-left mt-2">{item.subject}</p>
 									</div>
 								</BlogCard>
 								<div className="border-l-2 border-dotted border-gray-500 dark:border-gray-700 ml-4 p-1" />

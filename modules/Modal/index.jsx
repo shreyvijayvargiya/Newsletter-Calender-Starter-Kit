@@ -1,8 +1,6 @@
 import React from "react";
-import Modal from "react-modal";
 import { CloseIcon } from "modules/Icons";
 import { useSelector } from "react-redux";
-import colors from "tailwindcss/colors";
 
 const customStyles = {
 	content: {
