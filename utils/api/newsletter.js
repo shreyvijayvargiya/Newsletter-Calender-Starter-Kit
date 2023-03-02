@@ -1,5 +1,6 @@
 import firebase from "firebase";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 export const fetchAllLetters = async() => {
   const letters = [];
@@ -22,5 +23,7 @@ export const fetchSingleLetter = async(id) => {
 export const postLetter = async(values) => {
   const firestore = firebase.firestore();
   await firestore.collection("newsletters").add(values);
+
+  // write logic to send emails to all subscribers 
   toast.success("Newsletter added successfully")
 }

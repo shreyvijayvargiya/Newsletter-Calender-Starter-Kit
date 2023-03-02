@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import { postLetter } from "utils/api/newsletter";
 import { PreviewModal } from "modules";
+import { toast } from "react-toastify";
 
 const EditorComponent = dynamic(import("./Editor"), { ssr: false });
 
@@ -15,13 +16,17 @@ const AdminHome = () => {
 	const [open, setOpen] = useState(false);
 
 	const submitLetter = () => {
-		postLetter({
-			subject: values.subject,
-			data: html,
-			publishedDate: new Date(),
-		});
-		setValues({ subject: "", data: "" });
-		editorCore.current = "";
+		if (!values.subject || !html) {
+			toast.error("Subject and Email body is required");
+		} else {
+			postLetter({
+				subject: values.subject,
+				data: html,
+				publishedDate: new Date(),
+			});
+			setValues({ subject: "", data: "" });
+			editorCore.current = "";
+		}
 	};
 
 	const getBlogData = async () => {
@@ -89,7 +94,7 @@ const AdminHome = () => {
 					<div className="flex md:flex-row sm:flex-col xxs:flex-col xs:flex-col justify-between items-center">
 						<div>
 							<p>This is Admin page, use editor to write emails</p>
-							<p>Use View letter to preview your email</p>
+							<p>Click View letter to preview your email</p>
 						</div>
 						<div>
 							<div className="flex justify-around items-center gap-1">
