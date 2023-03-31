@@ -1,4 +1,4 @@
-# newsletter Calender Kit Repository
+# Newsletter Calender Kit Repository
 
 ### Full stack repository to develop and manage/run your own newsletter platform
 
