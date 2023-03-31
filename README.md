@@ -1,6 +1,6 @@
-# Ultimate blog website starter kit
+# newsletter Calender Kit Repository
 
-### Full stack repository to develop and manage/run your own blogging website
+### Full stack repository to develop and manage/run your own newsletter platform
 
 ## How to Run Locally
 
